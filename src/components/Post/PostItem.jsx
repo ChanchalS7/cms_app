@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 const PostItem = ({ post, onEdit, onDelete }) => (
   <div className="border p-4 mb-2 rounded shadow-sm">
     <h3 className="text-xl font-semibold">{post.title}</h3>
-    <p className="text-gray-700">{post.content.slice(0, 100)}...</p>
+    <p
+      className="text-gray-700"
+      dangerouslySetInnerHTML={{
+        __html: post.content.slice(0, 100),
+      }}
+    />
     <div className="mt-2 space-x-2">
       <button
         className="bg-yellow-500 text-white px-3 py-1 rounded"

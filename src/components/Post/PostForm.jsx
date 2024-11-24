@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { createPost, updatePost } from "../../api/Api";
 import { useNavigate, useParams } from "react-router-dom";
 import QuillEditor from "../Editor/QuilEditor";
+import BackButton from "../Button/UniversalBackButton";
 
 const PostForm = () => {
   const [title, setTitle] = useState("");
@@ -53,6 +54,7 @@ const PostForm = () => {
           Save
         </button>
       </form>
+      <BackButton className="my-5 mx-5" />
     </div>
   );
 };
